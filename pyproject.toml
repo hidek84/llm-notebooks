@@ -8,17 +8,20 @@ authors = ["hidek84 <hidek84@gmail.com>"]
 python = ">=3.9,<3.12"
 jupyterlab = "^4.0.9"
 langchain = "^0.0.352"
-lxml = "^4.9.4"
+lxml = "^4.9.4"  # for html parsing
 transformers = "^4.36.2"
 arize-phoenix = {extras = ["experimental"], version = "^2.1.0"}
 jupyterlab-code-formatter = "^2.2.1"  # for code formatter
 black = "^23.12.1"  # for code formatter
 isort = "^5.13.2"  # for code formatter
 sentence-transformers = "^2.2.2"
-tqdm = "^4.66.1"
-ipywidgets = "^8.1.1"
+tqdm = "^4.66.1"  # for progress bar
+ipywidgets = "^8.1.1"  # for tqdm
 unstructured = {extras = ["pdf"], version = "^0.11.6"}
 llmsherpa = "^0.1.3"
+litellm = "^1.16.7"
+git-python = { path = "./git-python", develop = false }
+open-interpreter = "^0.1.18"
 
 [tool.poetry.dev-dependencies]
 

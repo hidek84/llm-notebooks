@@ -37,6 +37,14 @@ optional = false
 python-versions = ">=3.8"
 
 [[package]]
+name = "ansicon"
+version = "1.89.0"
+description = "Python wrapper for loading Jason Hood's ANSICON"
+category = "main"
+optional = false
+python-versions = "*"
+
+[[package]]
 name = "antlr4-python3-runtime"
 version = "4.9.3"
 description = "ANTLR 4.9.3 runtime for Python 3.7"
@@ -62,6 +70,14 @@ typing-extensions = {version = ">=4.1", markers = "python_version < \"3.11\""}
 doc = ["packaging", "Sphinx (>=7)", "sphinx-rtd-theme", "sphinx-autodoc-typehints (>=1.2.0)"]
 test = ["anyio", "coverage[toml] (>=7)", "exceptiongroup (>=1.2.0)", "hypothesis (>=4.0)", "psutil (>=5.9)", "pytest (>=7.0)", "pytest-mock (>=3.6.1)", "trustme", "uvloop (>=0.17)"]
 trio = ["trio (>=0.23)"]
+
+[[package]]
+name = "appdirs"
+version = "1.4.4"
+description = "A small Python module for determining appropriate platform-specific dirs, e.g. a \"user data dir\"."
+category = "main"
+optional = false
+python-versions = "*"
 
 [[package]]
 name = "appnope"
@@ -105,7 +121,7 @@ tests = ["pytest"]
 
 [[package]]
 name = "arize-phoenix"
-version = "2.1.0"
+version = "2.2.1"
 description = "ML Observability in your notebook"
 category = "main"
 optional = false
@@ -136,7 +152,7 @@ uvicorn = "*"
 wrapt = "*"
 
 [package.extras]
-dev = ["arize", "gcsfs", "hatch", "jupyter", "langchain (>=0.0.334)", "litellm (>=1.0.3)", "llama-index (>=0.9.14)", "nbqa", "pandas-stubs (<=2.0.2.230605)", "pre-commit", "pytest", "pytest-asyncio", "pytest-cov", "pytest-lazy-fixture", "ruff (==0.1.5)", "strawberry-graphql[debug-server] (==0.208.2)"]
+dev = ["anthropic", "arize", "gcsfs", "google-cloud-aiplatform (>=1.3)", "hatch", "jupyter", "langchain (>=0.0.334)", "litellm (>=1.0.3)", "llama-index (>=0.9.14)", "nbqa", "pandas-stubs (<=2.0.2.230605)", "pre-commit", "pytest", "pytest-asyncio", "pytest-cov", "pytest-lazy-fixture", "ruff (==0.1.5)", "strawberry-graphql[debug-server] (==0.208.2)"]
 experimental = ["tenacity"]
 llama-index = ["llama-index (==0.9.14)"]
 
@@ -155,6 +171,14 @@ types-python-dateutil = ">=2.8.10"
 [package.extras]
 doc = ["doc8", "sphinx (>=7.0.0)", "sphinx-autobuild", "sphinx-autodoc-typehints", "sphinx_rtd_theme (>=1.3.0)"]
 test = ["dateparser (>=1.0.0,<2.0.0)", "pre-commit", "pytest", "pytest-cov", "pytest-mock", "pytz (==2021.1)", "simplejson (>=3.0.0,<4.0.0)"]
+
+[[package]]
+name = "astor"
+version = "0.8.1"
+description = "Read/rewrite/write Python ASTs"
+category = "main"
+optional = false
+python-versions = "!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,>=2.7"
 
 [[package]]
 name = "asttokens"
@@ -276,6 +300,19 @@ webencodings = "*"
 
 [package.extras]
 css = ["tinycss2 (>=1.1.0,<1.3)"]
+
+[[package]]
+name = "blessed"
+version = "1.20.0"
+description = "Easy, practical library for making terminal apps, by providing an elegant, well-documented interface to Colors, Keyboard input, and screen Positioning capabilities."
+category = "main"
+optional = false
+python-versions = ">=2.7"
+
+[package.dependencies]
+jinxed = {version = ">=1.1.0", markers = "platform_system == \"Windows\""}
+six = ">=1.9.0"
+wcwidth = ">=0.1.4"
 
 [[package]]
 name = "certifi"
@@ -481,6 +518,14 @@ wrapt = ">=1.10,<2"
 dev = ["tox", "pytest", "pytest-cov", "bump2version (<1)", "sphinx (<2)"]
 
 [[package]]
+name = "distro"
+version = "1.9.0"
+description = "Distro - an OS platform information API"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[[package]]
 name = "effdet"
 version = "0.4.1"
 description = "EfficientDet for PyTorch"
@@ -639,6 +684,47 @@ ssh = ["paramiko"]
 tqdm = ["tqdm"]
 
 [[package]]
+name = "git-python"
+version = "1.1.2"
+description = ""
+category = "main"
+optional = false
+python-versions = "*"
+develop = false
+
+[package.dependencies]
+gitpython = "*"
+
+[package.source]
+type = "directory"
+url = "git-python"
+
+[[package]]
+name = "gitdb"
+version = "4.0.11"
+description = "Git Object Database"
+category = "main"
+optional = false
+python-versions = ">=3.7"
+
+[package.dependencies]
+smmap = ">=3.0.1,<6"
+
+[[package]]
+name = "gitpython"
+version = "3.1.40"
+description = "GitPython is a Python library used to interact with Git repositories"
+category = "main"
+optional = false
+python-versions = ">=3.7"
+
+[package.dependencies]
+gitdb = ">=4.0.1,<5"
+
+[package.extras]
+test = ["black", "coverage", "ddt (>=1.1.1,!=1.4.3)", "mypy", "pre-commit", "pytest", "pytest-cov", "pytest-instafail", "pytest-subtests", "pytest-sugar", "mock"]
+
+[[package]]
 name = "graphql-core"
 version = "3.2.3"
 description = "GraphQL implementation for Python, a port of GraphQL.js, the JavaScript reference implementation for GraphQL."
@@ -680,6 +766,57 @@ joblib = ">=1.0"
 numpy = ">=1.20"
 scikit-learn = ">=0.20"
 scipy = ">=1.0"
+
+[[package]]
+name = "html2image"
+version = "2.0.4.3"
+description = "Package acting as a wrapper around the headless mode of existing web browsers to generate images from URLs and from HTML+CSS strings or files."
+category = "main"
+optional = false
+python-versions = ">=3.6,<4.0"
+
+[package.dependencies]
+requests = "*"
+websocket-client = ">=1.0.0,<2.0.0"
+
+[[package]]
+name = "httpcore"
+version = "1.0.2"
+description = "A minimal low-level HTTP client."
+category = "main"
+optional = false
+python-versions = ">=3.8"
+
+[package.dependencies]
+certifi = "*"
+h11 = ">=0.13,<0.15"
+
+[package.extras]
+asyncio = ["anyio (>=4.0,<5.0)"]
+http2 = ["h2 (>=3,<5)"]
+socks = ["socksio (>=1.0.0,<2.0.0)"]
+trio = ["trio (>=0.22.0,<0.23.0)"]
+
+[[package]]
+name = "httpx"
+version = "0.26.0"
+description = "The next generation HTTP client."
+category = "main"
+optional = false
+python-versions = ">=3.8"
+
+[package.dependencies]
+anyio = "*"
+certifi = "*"
+httpcore = ">=1.0.0,<2.0.0"
+idna = "*"
+sniffio = "*"
+
+[package.extras]
+brotli = ["brotli", "brotlicffi"]
+cli = ["click (>=8.0.0,<9.0.0)", "pygments (>=2.0.0,<3.0.0)", "rich (>=10,<14)"]
+http2 = ["h2 (>=3,<5)"]
+socks = ["socksio (>=1.0.0,<2.0.0)"]
 
 [[package]]
 name = "huggingface-hub"
@@ -759,6 +896,19 @@ zipp = {version = ">=3.1.0", markers = "python_version < \"3.10\""}
 [package.extras]
 docs = ["sphinx (>=3.5)", "sphinx (<7.2.5)", "jaraco.packaging (>=9.3)", "rst.linker (>=1.9)", "furo", "sphinx-lint", "jaraco.tidelift (>=1.4)"]
 testing = ["pytest (>=6)", "pytest-checkdocs (>=2.4)", "pytest-cov", "pytest-enabler (>=2.2)", "pytest-ruff", "zipp (>=3.17)", "pytest-black (>=0.3.7)", "pytest-mypy (>=0.9.1)"]
+
+[[package]]
+name = "inquirer"
+version = "3.1.4"
+description = "Collection of common interactive command line user interfaces, based on Inquirer.js"
+category = "main"
+optional = false
+python-versions = ">=3.8"
+
+[package.dependencies]
+blessed = ">=1.19.0"
+python-editor = ">=1.0.4"
+readchar = ">=3.0.6"
 
 [[package]]
 name = "iopath"
@@ -909,6 +1059,17 @@ MarkupSafe = ">=2.0"
 
 [package.extras]
 i18n = ["Babel (>=2.7)"]
+
+[[package]]
+name = "jinxed"
+version = "1.2.1"
+description = "Jinxed Terminal Library"
+category = "main"
+optional = false
+python-versions = "*"
+
+[package.dependencies]
+ansicon = {version = "*", markers = "platform_system == \"Windows\""}
 
 [[package]]
 name = "joblib"
@@ -1341,6 +1502,28 @@ paddledetection = ["paddlepaddle (==2.1.0)"]
 tesseract = ["pytesseract"]
 
 [[package]]
+name = "litellm"
+version = "1.16.7"
+description = "Library to easily interface with LLM API providers"
+category = "main"
+optional = false
+python-versions = ">=3.8, !=2.7.*, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*, !=3.5.*, !=3.6.*, !=3.7.*"
+
+[package.dependencies]
+aiohttp = "*"
+certifi = ">=2023.7.22,<2024.0.0"
+click = "*"
+importlib-metadata = ">=6.8.0"
+jinja2 = ">=3.1.2,<4.0.0"
+openai = ">=1.0.0"
+python-dotenv = ">=0.2.0"
+tiktoken = ">=0.4.0"
+tokenizers = "*"
+
+[package.extras]
+proxy = ["backoff", "fastapi (>=0.104.1,<0.105.0)", "orjson (>=3.9.7,<4.0.0)", "pyyaml (>=6.0,<7.0)", "rq", "streamlit (>=1.29.0,<2.0.0)", "uvicorn (>=0.22.0,<0.23.0)"]
+
+[[package]]
 name = "llmsherpa"
 version = "0.1.3"
 description = "Strategic APIs to Accelerate LLM Use Cases"
@@ -1372,6 +1555,27 @@ cssselect = ["cssselect (>=0.7)"]
 html5 = ["html5lib"]
 htmlsoup = ["beautifulsoup4"]
 source = ["Cython (==0.29.37)"]
+
+[[package]]
+name = "markdown-it-py"
+version = "3.0.0"
+description = "Python port of markdown-it. Markdown parsing, done right!"
+category = "main"
+optional = false
+python-versions = ">=3.8"
+
+[package.dependencies]
+mdurl = ">=0.1,<1.0"
+
+[package.extras]
+benchmarking = ["psutil", "pytest", "pytest-benchmark"]
+code_style = ["pre-commit (>=3.0,<4.0)"]
+compare = ["commonmark (>=0.9,<1.0)", "markdown (>=3.4,<4.0)", "mistletoe (>=1.0,<2.0)", "mistune (>=2.0,<3.0)", "panflute (>=2.3,<3.0)"]
+linkify = ["linkify-it-py (>=1,<3)"]
+plugins = ["mdit-py-plugins"]
+profiling = ["gprof2dot"]
+rtd = ["mdit-py-plugins", "myst-parser", "pyyaml", "sphinx", "sphinx-copybutton", "sphinx-design", "sphinx-book-theme", "jupyter-sphinx"]
+testing = ["coverage", "pytest", "pytest-cov", "pytest-regressions"]
 
 [[package]]
 name = "markupsafe"
@@ -1428,6 +1632,14 @@ python-versions = ">=3.5"
 
 [package.dependencies]
 traitlets = "*"
+
+[[package]]
+name = "mdurl"
+version = "0.1.2"
+description = "Markdown URL utilities"
+category = "main"
+optional = false
+python-versions = ">=3.7"
 
 [[package]]
 name = "mistune"
@@ -1767,6 +1979,58 @@ numpy = ">=1.21.6"
 packaging = "*"
 protobuf = "*"
 sympy = "*"
+
+[[package]]
+name = "open-interpreter"
+version = "0.1.18"
+description = "Let language models run code."
+category = "main"
+optional = false
+python-versions = ">=3.9,<4.0"
+
+[package.dependencies]
+appdirs = ">=1.4.4,<2.0.0"
+astor = ">=0.8.1,<0.9.0"
+git-python = ">=1.0.3,<2.0.0"
+html2image = ">=2.0.4.3,<3.0.0.0"
+inquirer = ">=3.1.3,<4.0.0"
+ipykernel = ">=6.26.0,<7.0.0"
+jupyter-client = ">=8.6.0,<9.0.0"
+litellm = ">=1.15.10,<2.0.0"
+matplotlib = ">=3.8.2,<4.0.0"
+psutil = ">=5.9.6,<6.0.0"
+pyreadline3 = {version = ">=3.4.1,<4.0.0", markers = "sys_platform == \"win32\""}
+pyyaml = ">=6.0.1,<7.0.0"
+rich = ">=13.4.2,<14.0.0"
+six = ">=1.16.0,<2.0.0"
+tiktoken = ">=0.4.0,<0.5.0"
+tokentrim = ">=0.1.13,<0.2.0"
+toml = ">=0.10.2,<0.11.0"
+wget = ">=3.2,<4.0"
+
+[package.extras]
+os = ["opencv-python (>=4.8.1.78,<5.0.0.0)", "pyautogui (>=0.9.54,<0.10.0)", "plyer (>=2.1.0,<3.0.0)"]
+safe = ["semgrep (>=1.52.0,<2.0.0)", "yaspin (>=3.0.1,<4.0.0)"]
+
+[[package]]
+name = "openai"
+version = "1.6.1"
+description = "The official Python library for the openai API"
+category = "main"
+optional = false
+python-versions = ">=3.7.1"
+
+[package.dependencies]
+anyio = ">=3.5.0,<5"
+distro = ">=1.7.0,<2"
+httpx = ">=0.23.0,<1"
+pydantic = ">=1.9.0,<3"
+sniffio = "*"
+tqdm = ">4"
+typing-extensions = ">=4.7,<5"
+
+[package.extras]
+datalib = ["numpy (>=1)", "pandas-stubs (>=1.1.0.11)", "pandas (>=1.2.3)"]
 
 [[package]]
 name = "opencv-python"
@@ -2242,6 +2506,25 @@ python-versions = "!=3.0.*,!=3.1.*,!=3.2.*,>=2.7"
 six = ">=1.5"
 
 [[package]]
+name = "python-dotenv"
+version = "1.0.0"
+description = "Read key-value pairs from a .env file and set them as environment variables"
+category = "main"
+optional = false
+python-versions = ">=3.8"
+
+[package.extras]
+cli = ["click (>=5.0)"]
+
+[[package]]
+name = "python-editor"
+version = "1.0.4"
+description = "Programmatically open an editor, capture the result."
+category = "main"
+optional = false
+python-versions = "*"
+
+[[package]]
 name = "python-iso639"
 version = "2023.12.11"
 description = "Look-up utilities for ISO 639 language codes and names"
@@ -2334,6 +2617,14 @@ python-versions = ">=3.8"
 full = ["numpy"]
 
 [[package]]
+name = "readchar"
+version = "4.0.5"
+description = "Library to easily read single chars and key strokes"
+category = "main"
+optional = false
+python-versions = ">=3.7"
+
+[[package]]
 name = "referencing"
 version = "0.32.0"
 description = "JSON Referencing + Python"
@@ -2389,6 +2680,21 @@ description = "Pure python rfc3986 validator"
 category = "main"
 optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
+
+[[package]]
+name = "rich"
+version = "13.7.0"
+description = "Render rich text, tables, progress bars, syntax highlighting, markdown and more to the terminal"
+category = "main"
+optional = false
+python-versions = ">=3.7.0"
+
+[package.dependencies]
+markdown-it-py = ">=2.2.0"
+pygments = ">=2.13.0,<3.0.0"
+
+[package.extras]
+jupyter = ["ipywidgets (>=7.5.1,<9)"]
 
 [[package]]
 name = "rpds-py"
@@ -2502,6 +2808,14 @@ description = "Python 2 and 3 compatibility utilities"
 category = "main"
 optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*"
+
+[[package]]
+name = "smmap"
+version = "5.0.1"
+description = "A pure Python implementation of a sliding window memory map manager"
+category = "main"
+optional = false
+python-versions = ">=3.7"
 
 [[package]]
 name = "sniffio"
@@ -2685,6 +2999,21 @@ optional = false
 python-versions = ">=3.8"
 
 [[package]]
+name = "tiktoken"
+version = "0.4.0"
+description = "tiktoken is a fast BPE tokeniser for use with OpenAI's models"
+category = "main"
+optional = false
+python-versions = ">=3.8"
+
+[package.dependencies]
+regex = ">=2022.1.18"
+requests = ">=2.26.0"
+
+[package.extras]
+blobfile = ["blobfile (>=2)"]
+
+[[package]]
 name = "timm"
 version = "0.9.12"
 description = "PyTorch Image Models"
@@ -2729,6 +3058,25 @@ huggingface_hub = ">=0.16.4,<1.0"
 testing = ["pytest", "requests", "numpy", "datasets", "black (==22.3)"]
 docs = ["sphinx", "sphinx-rtd-theme", "setuptools-rust"]
 dev = ["tokenizers"]
+
+[[package]]
+name = "tokentrim"
+version = "0.1.13"
+description = "Easily trim 'messages' arrays for use with GPTs."
+category = "main"
+optional = false
+python-versions = ">=3.8,<4.0"
+
+[package.dependencies]
+tiktoken = ">=0.4.0"
+
+[[package]]
+name = "toml"
+version = "0.10.2"
+description = "Python Library for Tom's Obvious, Minimal Language"
+category = "main"
+optional = false
+python-versions = ">=2.6, !=3.0.*, !=3.1.*, !=3.2.*"
 
 [[package]]
 name = "tomli"
@@ -3191,6 +3539,14 @@ optional = ["python-socks", "wsaccel"]
 test = ["websockets"]
 
 [[package]]
+name = "wget"
+version = "3.2"
+description = "pure python download utility"
+category = "main"
+optional = false
+python-versions = "*"
+
+[[package]]
 name = "widgetsnbextension"
 version = "4.0.9"
 description = "Jupyter interactive widgets for Jupyter Notebook"
@@ -3233,14 +3589,16 @@ testing = ["pytest (>=6)", "pytest-checkdocs (>=2.4)", "pytest-cov", "pytest-ena
 [metadata]
 lock-version = "1.1"
 python-versions = ">=3.9,<3.12"
-content-hash = "f5de5d945f411f5fb5c177d65d683b79d0b37f5b8b7508dc9ebe6144e34f7ce9"
+content-hash = "7c35e8897d539b96a55e4e012fad315ae25e155a075d1ab957ee4bdf9d563134"
 
 [metadata.files]
 aiohttp = []
 aiosignal = []
 annotated-types = []
+ansicon = []
 antlr4-python3-runtime = []
 anyio = []
+appdirs = []
 appnope = [
     {file = "appnope-0.1.3-py2.py3-none-any.whl", hash = "sha256:265a455292d0bd8a72453494fa24df5a11eb18373a60c7c0430889f22548605e"},
     {file = "appnope-0.1.3.tar.gz", hash = "sha256:02bd91c4de869fbb1e1c50aafc4098827a7a54ab2f39d9dcba6c9547ed920e24"},
@@ -3271,6 +3629,7 @@ argon2-cffi-bindings = [
 ]
 arize-phoenix = []
 arrow = []
+astor = []
 asttokens = []
 async-lru = []
 async-timeout = []
@@ -3280,6 +3639,7 @@ backoff = []
 beautifulsoup4 = []
 black = []
 bleach = []
+blessed = []
 certifi = []
 cffi = []
 chardet = []
@@ -3304,6 +3664,7 @@ defusedxml = [
     {file = "defusedxml-0.7.1.tar.gz", hash = "sha256:1bb3032db185915b62d7c6209c5a8792be6a32ab2fedacc84e01b52c51aa3e69"},
 ]
 deprecated = []
+distro = []
 effdet = []
 emoji = []
 exceptiongroup = []
@@ -3316,15 +3677,22 @@ fonttools = []
 fqdn = []
 frozenlist = []
 fsspec = []
+git-python = []
+gitdb = []
+gitpython = []
 graphql-core = []
 greenlet = []
 h11 = []
 hdbscan = []
+html2image = []
+httpcore = []
+httpx = []
 huggingface-hub = []
 humanfriendly = []
 idna = []
 importlib-metadata = []
 importlib-resources = []
+inquirer = []
 iopath = []
 ipykernel = []
 ipython = []
@@ -3336,6 +3704,7 @@ jinja2 = [
     {file = "Jinja2-3.1.2-py3-none-any.whl", hash = "sha256:6088930bfe239f0e6710546ab9c19c9ef35e29792895fed6e6e31a023a182a61"},
     {file = "Jinja2-3.1.2.tar.gz", hash = "sha256:31351a702a408a9e7595a8fc6150fc3f43bb6bf7e319770cbc0db9df9437e852"},
 ]
+jinxed = []
 joblib = []
 json5 = []
 jsonpatch = []
@@ -3361,13 +3730,16 @@ langchain-core = []
 langdetect = []
 langsmith = []
 layoutparser = []
+litellm = []
 llmsherpa = []
 llvmlite = []
 lxml = []
+markdown-it-py = []
 markupsafe = []
 marshmallow = []
 matplotlib = []
 matplotlib-inline = []
+mdurl = []
 mistune = []
 mpmath = []
 multidict = []
@@ -3396,6 +3768,8 @@ nvidia-nvtx-cu12 = []
 omegaconf = []
 onnx = []
 onnxruntime = []
+open-interpreter = []
+openai = []
 opencv-python = []
 opentelemetry-api = []
 opentelemetry-proto = []
@@ -3452,6 +3826,8 @@ python-dateutil = [
     {file = "python-dateutil-2.8.2.tar.gz", hash = "sha256:0123cacc1627ae19ddf3c27a5de5bd67ee4586fbdd6440d9748f8abb483d3e86"},
     {file = "python_dateutil-2.8.2-py2.py3-none-any.whl", hash = "sha256:961d03dc3453ebbc59dbdea9e4e11c5651520a876d0f4db161e8674aae935da9"},
 ]
+python-dotenv = []
+python-editor = []
 python-iso639 = []
 python-json-logger = []
 python-magic = []
@@ -3462,11 +3838,13 @@ pywinpty = []
 pyyaml = []
 pyzmq = []
 rapidfuzz = []
+readchar = []
 referencing = []
 regex = []
 requests = []
 rfc3339-validator = []
 rfc3986-validator = []
+rich = []
 rpds-py = []
 safetensors = []
 scikit-learn = []
@@ -3478,6 +3856,7 @@ six = [
     {file = "six-1.16.0-py2.py3-none-any.whl", hash = "sha256:8abb2f1d86890a2dfb989f9a77cfcfd3e47c2a354b01111771326f8aa26e0254"},
     {file = "six-1.16.0.tar.gz", hash = "sha256:1e61c37477a1626458e36f7b1d82aa5c9b094fa4802892072e49de9c60c4c926"},
 ]
+smmap = []
 sniffio = []
 sortedcontainers = [
     {file = "sortedcontainers-2.4.0-py2.py3-none-any.whl", hash = "sha256:a163dcaede0f1c021485e957a39245190e74249897e2ae4b2aa38595db237ee0"},
@@ -3493,9 +3872,15 @@ tabulate = []
 tenacity = []
 terminado = []
 threadpoolctl = []
+tiktoken = []
 timm = []
 tinycss2 = []
 tokenizers = []
+tokentrim = []
+toml = [
+    {file = "toml-0.10.2-py2.py3-none-any.whl", hash = "sha256:806143ae5bfb6a3c6e736a764057db0e6a0e05e338b5630894a5f779cabb4f9b"},
+    {file = "toml-0.10.2.tar.gz", hash = "sha256:b3bda1d108d5dd99f4a20d24d9c348e91c4db7ab1b749200bded2f839ccbe68f"},
+]
 tomli = [
     {file = "tomli-2.0.1-py3-none-any.whl", hash = "sha256:939de3e7a6161af0c887ef91b7d41a53e7c5a1ca976325f429cb46ea9bc30ecc"},
     {file = "tomli-2.0.1.tar.gz", hash = "sha256:de526c12914f0c550d15924c62d72abc48d6fe7364aa87328337a31007fe8a4f"},
@@ -3526,6 +3911,7 @@ webencodings = [
     {file = "webencodings-0.5.1.tar.gz", hash = "sha256:b36a1c245f2d304965eb4e0a82848379241dc04b865afcc4aab16748587e1923"},
 ]
 websocket-client = []
+wget = []
 widgetsnbextension = []
 wrapt = []
 yarl = []
